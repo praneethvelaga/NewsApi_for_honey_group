@@ -1,0 +1,200 @@
+/* Set up the basic page style */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f7fa; /* Light gray-blue background */
+  color: #333; /* Dark text */
+}
+
+/* Center the app content */
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Style the header */
+header {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #2c3e50; /* Dark blue-gray text */
+}
+
+/* Arrange the category filter */
+.category-filter {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Style category buttons */
+.category-filter button {
+  margin: 5px;
+  padding: 12px 20px;
+  border: none;
+  background-color: #dfe6e9; /* Light gray */
+  color: #2d3436; /* Dark gray text */
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.2s ease;
+}
+
+/* Change button style when active or hovered */
+.category-filter button.active,
+.category-filter button:hover {
+  background-color: #0984e3; /* Blue */
+  color: #ffffff; /* White text */
+  box-shadow: 0 2px 8px rgba(9, 132, 227, 0.3);
+}
+
+/* Lay out news items in a grid */
+.news-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 0 10px;
+}
+
+/* Style each news card */
+.news-item {
+  background: #ffffff;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.news-item:hover {
+  transform: translateY(-5px); /* Lift on hover */
+}
+
+/* Fit images in cards */
+.news-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Arrange content inside cards */
+.news-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Style the headline */
+.news-content h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #2c3e50;
+  line-height: 1.4;
+}
+
+/* Style the description */
+.news-content p {
+  margin: 0;
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+/* Style the link */
+.news-content a {
+  margin-top: auto;
+  text-decoration: none;
+  color: #0984e3;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.news-content a:hover {
+  color: #0652dd; /* Darker blue on hover */
+}
+
+/* Show loading text */
+.loading {
+  text-align: center;
+  margin: 30px 0;
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+/* Center the load more button */
+.load-more {
+  text-align: center;
+  margin: 30px 0;
+}
+
+/* Style the load more button */
+.load-more button {
+  padding: 12px 25px;
+  border: none;
+  background-color: #0984e3; /* Blue */
+  color: #ffffff; /* White text */
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+.load-more button:hover {
+  background-color: #0652dd; /* Darker blue */
+  box-shadow: 0 2px 8px rgba(6, 82, 221, 0.3);
+}
+
+.load-more button:disabled {
+  background-color: #b2bec3; /* Gray */
+  color: #636e72;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Adjust for smaller screens (tablets) */
+@media (max-width: 768px) {
+  .category-filter button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+
+  .news-item {
+    max-width: 100%;
+  }
+
+  .news-item img {
+    height: 180px;
+  }
+
+  .news-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .load-more button {
+    padding: 10px 20px;
+  }
+}
+
+/* Adjust for tiny screens (phones) */
+@media (max-width: 480px) {
+  .category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .category-filter button {
+    width: 45%;
+  }
+}
